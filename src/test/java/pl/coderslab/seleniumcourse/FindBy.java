@@ -24,6 +24,8 @@ import java.util.UUID;
 //Hotel Location - Warsaw
 //Enter your e-mail - test@test.com
 
+// zad 1 - By.id
+
 public class FindBy {
     WebDriver driver;
 
@@ -36,14 +38,20 @@ public class FindBy {
         hotelLocationInput.sendKeys("Warsaw");
         enterEmailInput.sendKeys("test@test.com");
 
-
+     //zad 2. find By.name
     }
 
     @Test
     public void shouldFindByName() {
         driver.get("https://hotel-testlab.coderslab.pl/en/");
         WebElement hotelLocationInput = driver.findElement(By.name("hotel_location"));
-        // todo finish
+        WebElement searchNowBtn = driver.findElement(By.name("search_room_submit"));
+        WebElement enterYourEmailInput = driver.findElement(By.name("email"));
+        WebElement subscribeBtn = driver.findElement(By.name("submitNewsletter"));
+        hotelLocationInput.sendKeys("Warsaw");
+        enterYourEmailInput.sendKeys("test@test.com");
+        driver.findElement(By.name("search_room_submit")).submit(); // czy to działa i jesli tak to czy to to samo co searchNowBtn.submit();?
+
     }
 
     @Test

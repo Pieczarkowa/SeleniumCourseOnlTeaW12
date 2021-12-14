@@ -10,10 +10,13 @@ public class KonfigZad1 {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("https://www.google.com/");
         WebElement searchInput = driver.findElement(By.name("q")); // nie dziala przez popup o bezpieczenstwie
-        searchInput.sendKeys("java");
+        searchInput.clear();
+        searchInput.sendKeys("java courses");
         searchInput.submit();
+
     }
 }
 

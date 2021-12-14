@@ -22,7 +22,6 @@ public class ThirdTest {
         driver.navigate().forward();
         driver.navigate().refresh();
 
-
     }
 
 }
