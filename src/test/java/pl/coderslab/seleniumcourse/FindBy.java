@@ -53,7 +53,7 @@ public class FindBy {
         driver.findElement(By.name("search_room_submit")).submit(); // czy to działa i jesli tak to czy to to samo co searchNowBtn.submit();?
 
     }
-
+// zad 3 By.className
     @Test
     public void shouldFindByClassName() {
         driver.get("https://hotel-testlab.coderslab.pl/en/");
