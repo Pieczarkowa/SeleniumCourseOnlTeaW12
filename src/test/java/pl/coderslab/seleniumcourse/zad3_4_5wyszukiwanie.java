@@ -25,7 +25,7 @@ import java.util.UUID;
 
 // zad 1 - By.id
 
-public class zad3_4_wyszukiwanie {
+public class zad3_4_5wyszukiwanie {
     WebDriver driver;
 
 
@@ -37,7 +37,7 @@ public class zad3_4_wyszukiwanie {
         signInBtn.click();
         WebElement emailPlace = driver.findElement(By.id("email_create"));
         emailPlace.clear();
-        emailPlace.sendKeys("test.testx@wp.pl");
+        emailPlace.sendKeys("test.test10@wp.pl");
         WebElement createAccBtn = driver.findElement(By.id("SubmitCreate"));
         createAccBtn.submit();
         //przechodzi w zad 4 by.xpath
@@ -51,6 +51,10 @@ public class zad3_4_wyszukiwanie {
         passwordField.sendKeys("Password");
         WebElement registerButton = driver.findElement(By.xpath("//button[@type='submit']"));
         registerButton.click();
+        //teraz zad 5
+        WebElement myPersonalInfo = driver.findElement(By.cssSelector("i.icon-user"));
+      //  WebElement myAddressesField = driver.findElement(By.cssSelector("href.icon-building")); --to jest zle
+     //   myAddressesField.click();
 
     }
 
