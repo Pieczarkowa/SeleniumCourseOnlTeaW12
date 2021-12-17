@@ -37,7 +37,7 @@ public class zad3_4_5wyszukiwanie {
         signInBtn.click();
         WebElement emailPlace = driver.findElement(By.id("email_create"));
         emailPlace.clear();
-        emailPlace.sendKeys("test.test10@wp.pl");
+        emailPlace.sendKeys("test.testowy@wp.pl");
         WebElement createAccBtn = driver.findElement(By.id("SubmitCreate"));
         createAccBtn.submit();
         //przechodzi w zad 4 by.xpath
