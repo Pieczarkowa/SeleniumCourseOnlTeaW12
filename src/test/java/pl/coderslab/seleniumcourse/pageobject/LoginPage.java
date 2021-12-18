@@ -25,6 +25,22 @@ public class LoginPage {
         emailInput.clear();
         emailInput.sendKeys(email);
     }
+    //tu dodaje zad2
+    public void fillEmailToRegister(String email) {
+        WebElement emailField = driver.findElement(By.id("email"));
+        emailField.clear();
+        emailField.sendKeys(email);
+    }
+    public void fillPasswordToRegister(String password) {
+        WebElement passwordField = driver.findElement(By.id("passwd"));
+        passwordField.clear();
+        passwordField.sendKeys(password);
+    }
+    public void clickSignInRegistered() {
+        WebElement signInBtnRegistered = driver.findElement(By.id("SubmitLogin"));
+        signInBtnRegistered.click();
+    }
+    //tu sie konczy zad2
 
     public void clickCreateAnAccount() {
         WebElement createAccountBtn = driver.findElement(By.id("SubmitCreate"));

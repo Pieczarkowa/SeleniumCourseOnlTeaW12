@@ -10,6 +10,12 @@ public class MyAccountPage {
     public MyAccountPage(WebDriver driver) {
         this.driver = driver;
     }
+    //tu dodaje zad2
+    public void BackToLandingPage() {
+        WebElement homeButton = driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li/a"));
+        homeButton.click();
+    }
+    //tu koniec zad 2
 
     public boolean isAccountCreationConfirmed() {
         WebElement accountCreationConfirmationPanel = driver.findElement(By.cssSelector("p.alert-success"));

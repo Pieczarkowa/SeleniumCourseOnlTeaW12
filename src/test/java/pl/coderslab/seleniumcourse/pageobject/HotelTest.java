@@ -1,5 +1,6 @@
 package pl.coderslab.seleniumcourse.pageobject;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -47,7 +48,17 @@ public class HotelTest {
         MyAccountPage myAccountPage = new MyAccountPage(driver);
         assertTrue(myAccountPage.isAccountCreationConfirmed());
     }
+    //zad 2 - page object pattern
+    //tu dodaje nowy kod
+    //  @Test
 
+    //   public void searchHotelByName() {
+    //      driver.get("https://hotel-testlab.coderslab.pl/en/");
+    //      LandingPage landingPage = new LandingPage(driver);
+    //       landingPage.clickSignIn();
+//    }
+
+    //tu sie konczy moj nowy kod
     @BeforeEach
     public void beforeEach() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
@@ -55,8 +66,8 @@ public class HotelTest {
         this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(16));
     }
 
-//    @AfterEach
-//    public void afterEach() {
-//        this.driver.quit();
-//    }
+//   @AfterEach
+    //  public void afterEach() {
+    //      this.driver.quit();
+//  }
 }
