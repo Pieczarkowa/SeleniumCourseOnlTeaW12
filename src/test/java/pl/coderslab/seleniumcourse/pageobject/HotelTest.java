@@ -1,15 +1,16 @@
 package pl.coderslab.seleniumcourse.pageobject;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.time.Month;
 import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class HotelTest {
     WebDriver driver;
@@ -22,36 +23,29 @@ public class HotelTest {
         landingPage.clickSignIn();
 
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.fillCreateAnAccountRandomEmail();
+        String randomEmail = UUID.randomUUID() + "@mail.pl";
+        loginPage.fillCreateAnAccountEmail(randomEmail);
         loginPage.clickCreateAnAccount();
 
-        WebElement radioMr = driver.findElement(By.cssSelector("input#id_gender1"));
-        radioMr.click();
-        WebElement firstNameInput = driver.findElement(By.id("customer_firstname"));
-        if(!firstNameInput.isDisplayed() || !firstNameInput.isEnabled()) {
-            Assertions.fail("element not interactable!");
-        }
-        firstNameInput.sendKeys("ala");
-        WebElement lastNameInput = driver.findElement(By.id("customer_lastname"));
-        if(!lastNameInput.isDisplayed() || !lastNameInput.isEnabled()) {
-            Assertions.fail("element not interactable!");
-        }
-        lastNameInput.sendKeys("alowska");
-        WebElement passwordInput = driver.findElement(By.id("passwd"));
-        if(!passwordInput.isDisplayed() || !passwordInput.isEnabled()) {
-            Assertions.fail("element not interactable!");
-        }
-        passwordInput.sendKeys("password");
-        WebElement days = driver.findElement(By.id("days"));
-        days.sendKeys("9");
-        WebElement months = driver.findElement(By.id("months"));
-        months.sendKeys("January");
-        WebElement years = driver.findElement(By.id("years"));
-        years.sendKeys("2000");
-        WebElement newsletter = driver.findElement(By.id("newsletter"));
-        newsletter.click();
-        WebElement submit = driver.findElement(By.id("submitAccount"));
-        submit.click();
+        UserData userData = new UserData()
+                .setFirstName("ala")
+                .setLastName("alowska")
+                .setMr(false)
+                .setEmail("")
+                .setPassword("password")
+                .setDays(9)
+                .setMonth(Month.JANUARY)
+                .setYears(2000)
+                .setNewsletter(true)
+                .setGetSpecialOffers(false);
+
+        CreateAnAccountPage createAnAccountPage = new CreateAnAccountPage(driver);
+        assertTrue(createAnAccountPage.areMandatoryInputsAccessible(), "element not interactable!");
+        assertEquals(randomEmail, createAnAccountPage.getEmail());
+        createAnAccountPage.fillForm(userData);
+        createAnAccountPage.clickRegister();
+        MyAccountPage myAccountPage = new MyAccountPage(driver);
+        assertTrue(myAccountPage.isAccountCreationConfirmed());
     }
 
     @BeforeEach
