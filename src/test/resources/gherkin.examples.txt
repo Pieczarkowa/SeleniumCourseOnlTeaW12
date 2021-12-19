@@ -13,3 +13,23 @@ Given: Web page https://www.qwant.com/ opened in browser
 When: Search phrase ""W pustyni i w puszczy" entered in search input box.
 And: key entered pressed.
 Then: First 3 search result titles contain phrase "W pustyni i w puszczy"
+
+Ad 2.logowanie do portalu edukacyjnego Coders Lab https://lms.coderslab.pl
+Scenario: Loggin user in to https://lms.coderslab.pl website.
+Given: Web page https://lms.coderslab.pl opened in browser.
+When: https://lms.coderslab.pl web page address entered and submitted in browser window.
+And: Sign in button pressed
+And: User name and password provided
+And: Sign in button pressed
+Then: User successfully logged in to https://lms.coderslab.pl.
+And visible icon with user name.
+
+Ad.3 uruchomienie pierwszej prezentacji z preworku Java na kursie testera automatyzującego.
+
+Scenario: Launching first Java prework presentation from test automation course.
+Given: Web page https://lms.coderslab.pl opened in browser.
+And: User logged in.
+When: click on test automation course
+And: click on prework "pokaz rozdzialy" button
+And: click on first "wstep do kursu" chapter
+Then: visible first presentation in prework Java test automation course.
