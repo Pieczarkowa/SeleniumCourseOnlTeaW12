@@ -10,7 +10,7 @@ Przygotuj opisy scenariuszy:
 Ad 1.wyszukiwanie dowolnej frazy w wyszukiwarce Qwant,
 Scenario: Seach  for "W pustyni i w puszczy" in https://www.qwant.com/
 Given: Web page https://www.qwant.com/ opened in browser
-When: Search phrase ""W pustyni i w puszczy" entered in search input box.
+When: Search phrase W pustyni i w puszczy" entered in search input box.
 And: key entered pressed.
 Then: First 3 search result titles contain phrase "W pustyni i w puszczy"
 
