@@ -36,14 +36,24 @@ public class QwantSearchSteps {
         WebElement inputBox = driver.findElement(By.name("q"));
         inputBox.sendKeys(Keys.ENTER);
     }
-    @Then("^First 3 search results titles contain phrase \"(.*)\"$")
-    public void checkSearchResults(String searchPhrase) {
+    @Then("^First (.*) search results titles contain phrase \"(.*)\"$")
+    public void checkSearchResults(int count, String searchPhrase) {
         List<WebElement> searchResults = driver.findElements(By.cssSelector("div.WebResult-module__container___18c35 a"));
-        assertTrue(searchResults.get(0).getText().contains(searchPhrase));
-        assertTrue(searchResults.get(1).getText().contains(searchPhrase));
-        assertTrue(searchResults.get(2).getText().contains(searchPhrase));
+        for(int i=0; i<count; i++) {
+            assertTrue(searchResults.get(i).getText().toLowerCase().contains(searchPhrase.toLowerCase()));
+        }
     }
 }
+
+    //wczesniejszy przyklad zamiast powyzszej petli
+//    @Then("^First 3 search results titles contain phrase \"(.*)\"$")
+//    public void checkSearchResults(String searchPhrase) {
+//        List<WebElement> searchResults = driver.findElements(By.cssSelector("div.WebResult-module__container___18c35 a"));
+//        assertTrue(searchResults.get(0).getText().contains(searchPhrase));
+//        assertTrue(searchResults.get(1).getText().contains(searchPhrase));
+//        assertTrue(searchResults.get(2).getText().contains(searchPhrase));
+//    }
+//}
     //Scenario: Seach  for "W pustyni i w puszczy" in https://www.qwant.com/
     //Given Web page https://www.qwant.com/ opened in browser
     //When Search phrase "W pustyni i w puszczy" entered in search input box.
