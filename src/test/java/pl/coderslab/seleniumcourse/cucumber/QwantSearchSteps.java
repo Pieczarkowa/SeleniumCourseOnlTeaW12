@@ -31,7 +31,7 @@ public class QwantSearchSteps {
         inputBox.clear();
         inputBox.sendKeys(searchPhrase);
     }
-    @And("^key entered pressed$")
+    @And("^key enter pressed$")
     public void pressEnter() {
         WebElement inputBox = driver.findElement(By.name("q"));
         inputBox.sendKeys(Keys.ENTER);
