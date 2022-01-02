@@ -56,16 +56,15 @@ public class ZadZal1Steps {
     @And("^New address form filled out with: (.*), (.*), (.*), (.*), (.*), (.*) and saved$")
     public void fillTheAddressesForm(String alias, String address, String zip, String city, String country, String phone) {
         ZadZal1AddressesData zadZal1AddressesData = new ZadZal1AddressesData()
-                .setNewAlias(alias);
+                .setNewAlias(alias)
+        .setNewAddress(address)
+        .setZip(zip)
+        .setCity(city)
+        .setCountry(country)
+        .setPhone(phone);
 
         this.zadZal1CreateAddressPage = new ZadZal1CreateAddressPage(driver);
         zadZal1CreateAddressPage.fillAddressesForm(zadZal1AddressesData);
-        //    .setLastName(lastName)
-        //    .setMr(isMr)
-        //     .setEmail("")
-        //     .setPassword(password)
-        //     .setNewsletter(isNewsletter)
-        //     .setGetSpecialOffers(isSpecialOffers);
 
 
     }

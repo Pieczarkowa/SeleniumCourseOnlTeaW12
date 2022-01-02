@@ -8,16 +8,16 @@ import org.openqa.selenium.support.PageFactory;
 public class ZadZal1CreateAddressPage {
     @FindBy(xpath = "//*[@id=\"content\"]/div/div/form/section/div[1]/div[1]/input")
     private WebElement newAliasInput;
-    //   @FindBy(id = "customer_lastname")
-    //   private WebElement lastNameInput;
-//    @FindBy(id = "email")
-//    private WebElement emailInput;
-//    @FindBy(id = "passwd")
-    //   private WebElement passwordInput;
-    //   @FindBy(id = "days")
-    //   private WebElement days;
-    //   @FindBy(id = "months")
-    //   private WebElement months;
+    @FindBy(xpath = "//*[@id=\"content\"]/div/div/form/section/div[6]/div[1]/input")
+    private WebElement addressInput;
+    @FindBy(xpath = "//*[@id=\"content\"]/div/div/form/section/div[8]/div[1]/input")
+    private WebElement zipInput;
+    @FindBy(xpath = "//*[@id=\"content\"]/div/div/form/section/div[9]/div[1]/input")
+    private WebElement cityInput;
+    @FindBy(xpath = "//*[@id=\"content\"]/div/div/form/section/div[10]/div[1]/select")
+    private WebElement countryInput;
+    @FindBy(xpath = "//*[@id=\"content\"]/div/div/form/section/div[11]/div[1]/input")
+    private WebElement phoneInput;
     //   @FindBy(id = "years")
     //   private WebElement years;
     //   @FindBy(id = "newsletter")
@@ -34,6 +34,11 @@ public class ZadZal1CreateAddressPage {
     public void fillAddressesForm(ZadZal1AddressesData zadZal1AddressesData) {
 
         newAliasInput.sendKeys(zadZal1AddressesData.getNewAlias());
+        addressInput.sendKeys(zadZal1AddressesData.getNewAddress());
+        zipInput.sendKeys(zadZal1AddressesData.getZip());
+        cityInput.sendKeys(zadZal1AddressesData.getCity());
+        countryInput.sendKeys(zadZal1AddressesData.getCountry());
+        phoneInput.sendKeys(zadZal1AddressesData.getPhone());
     }
 }
    //     lastNameInput.sendKeys(userData.getLastName());
