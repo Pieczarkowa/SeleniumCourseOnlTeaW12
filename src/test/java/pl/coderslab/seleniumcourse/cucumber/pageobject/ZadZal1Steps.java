@@ -17,6 +17,9 @@ public class ZadZal1Steps {
     private ZadZal1SignInPage zadZal1SignInPage;
     private ZadZal1YourAccPage zadZal1YourAccPage;
     private ZadZal1YourAddressesPage zadZal1YourAddressesPage;
+    private ZadZal1AddressesData zadZal1AddressesData;
+    private ZadZal1CreateAddressPage zadZal1CreateAddressPage;
+
 
 
     @Given("^Landing page (.*) opened in browser$")
@@ -50,7 +53,22 @@ public class ZadZal1Steps {
         this.zadZal1YourAddressesPage = new ZadZal1YourAddressesPage(driver);
         zadZal1YourAddressesPage.CreateNewAddress();
     }
+    @And("^New address form filled out with: (.*), (.*), (.*), (.*), (.*), (.*) and saved$")
+    public void fillTheAddressesForm(String alias, String address, String zip, String city, String country, String phone) {
+        ZadZal1AddressesData zadZal1AddressesData = new ZadZal1AddressesData()
+                .setNewAlias(alias);
 
+        this.zadZal1CreateAddressPage = new ZadZal1CreateAddressPage(driver);
+        zadZal1CreateAddressPage.fillAddressesForm(zadZal1AddressesData);
+        //    .setLastName(lastName)
+        //    .setMr(isMr)
+        //     .setEmail("")
+        //     .setPassword(password)
+        //     .setNewsletter(isNewsletter)
+        //     .setGetSpecialOffers(isSpecialOffers);
+
+
+    }
 
     @BeforeEach
     public void beforeEach() {
