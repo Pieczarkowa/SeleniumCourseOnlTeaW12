@@ -18,15 +18,15 @@ public class AssertionsExample {
         Assertions.assertEquals(42, actual);
     }
 
-    @Test
-    public void assertionsExample() {
+   @Test
+   public void assertionsExample() {
         assertTrue(3>2);
         assertFalse(4<3);
-        assertNotNull(new Object());
+       assertNotNull(new Object());
         assertNull(null);
-        assertEquals(42, 42);
+       assertEquals(42, 42);
         assertEquals(3.14, 3.14);
-        assertEquals(true, true);
+       assertEquals(true, true);
         assertEquals("napis", "napis");
     }
 }

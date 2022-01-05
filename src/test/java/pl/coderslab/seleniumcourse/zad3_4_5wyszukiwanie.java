@@ -53,7 +53,6 @@ public class zad3_4_5wyszukiwanie {
         registerButton.click();
         //teraz zad 5
         WebElement myPersonalInfo = driver.findElement(By.cssSelector("i.icon-user"));
-      //  WebElement myAddressesField = driver.findElement(By.cssSelector("href.icon-building")); --to jest zle
      //   myAddressesField.click();
 
     }

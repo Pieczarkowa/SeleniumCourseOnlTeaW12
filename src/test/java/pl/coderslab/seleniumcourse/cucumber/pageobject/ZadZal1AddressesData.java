@@ -1,7 +1,5 @@
 package pl.coderslab.seleniumcourse.cucumber.pageobject;
 
-import java.time.Month;
-
 
 public class ZadZal1AddressesData {
 
@@ -11,8 +9,6 @@ public class ZadZal1AddressesData {
     private String city;
     private String country;
     private String phone;
-    //  private boolean isNewsletter;
-    //   private boolean isGetSpecialOffers;
 
 
     public String getNewAlias() {
@@ -68,32 +64,5 @@ public class ZadZal1AddressesData {
         this.phone = phone;
         return this;
     }
+
 }
-
-  //  public int getYears() {
- //       return years;
-//    }
-
- //   public ZadZal1AddressesData setYears(int years) {
-  //      this.years = years;
-  //      return this;
-//    }
-
-  //  public boolean isNewsletter() {
-  //      return isNewsletter;
-//    }
-
- //   public ZadZal1AddressesData setNewsletter(boolean newsletter) {
- //       isNewsletter = newsletter;
-//        return this;
-  //  }
-
-  //  public boolean isGetSpecialOffers() {
- //       return isGetSpecialOffers;
- //   }
-
- //   public ZadZal1AddressesData setGetSpecialOffers(boolean getSpecialOffers) {
-  //      isGetSpecialOffers = getSpecialOffers;
-  //      return this;
- //   }
-//}

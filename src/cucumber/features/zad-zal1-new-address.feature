@@ -6,11 +6,12 @@ Feature: Add new address for user
     And Username and password entered in the form fields and 'Sign in' button pressed
     And Section 'Addresses' on user account page selected
     And Section '+ Create new address' chosen and pressed
-    And New address form filled out with: <alias>, <address>, <zip/postal code>, <city>, <country>, <phone> and saved
- #   Then New address for the user added and verified
+    And New address form filled out with: <alias>, <address>, <zip/postal code>, <city>, <country>, <phone> then checked and saved
+    And New address deleted
+    Then New address deletion confirmed
    Examples:
-     |alias |address           |zip/postal code|city    |country         |phone       |
-     |Ala   |Akacjowa 12       |00-001         |Warsaw  | Poland         | 666 666 666|
-     |Alusia|Baker Street 13   |00-002         |London  | United Kingdom | 555 555 555|
-     |Alka  |Unter den Linden 8|00-003         |Berlin  | Germany        | 444 444 444|
+     |alias |address           |zip/postal code|city     |country         |phone       |
+     |Ala   |Abbey Drive 12    |00-001         |Glasgow  | United Kingdom | 666 666 666|
+     |Alusia|Baker Street 13   |00-002         |London   | United Kingdom | 555 555 555|
+     |Alka  |Penny Lane 8      |00-003         |Liverpool| United Kingdom | 444 444 444|
 

@@ -1,5 +1,7 @@
 package pl.coderslab.seleniumcourse.cucumber.pageobject;
 
+import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,14 +20,9 @@ public class ZadZal1CreateAddressPage {
     private WebElement countryInput;
     @FindBy(xpath = "//*[@id=\"content\"]/div/div/form/section/div[11]/div[1]/input")
     private WebElement phoneInput;
-    //   @FindBy(id = "years")
-    //   private WebElement years;
-    //   @FindBy(id = "newsletter")
-    //   private WebElement newsletterCheckbox;
-    //   @FindBy(id = "optin")
-    //   private WebElement specialOffersCheckbox;
-    //  @FindBy(id = "submitAccount")
-//    private WebElement registerButton;
+    @FindBy(xpath = "//*[@id=\"content\"]/div/div/form/footer/button")
+    private WebElement saveAddressBtn;
+
 
     public ZadZal1CreateAddressPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -39,43 +36,19 @@ public class ZadZal1CreateAddressPage {
         cityInput.sendKeys(zadZal1AddressesData.getCity());
         countryInput.sendKeys(zadZal1AddressesData.getCountry());
         phoneInput.sendKeys(zadZal1AddressesData.getPhone());
+
+
+    }
+
+
+    public void catchExceptionToSave() {
+        try {
+
+            saveAddressBtn.click();
+        } catch (org.openqa.selenium.StaleElementReferenceException ex) {
+            saveAddressBtn.click();
+        }
+
     }
 }
-   //     lastNameInput.sendKeys(userData.getLastName());
-  //      if (!userData.getEmail().equals("")) {
-   //         emailInput.clear();
-  //          emailInput.sendKeys(userData.getEmail());
- //       }
- //       passwordInput.sendKeys(userData.getPassword());
-//   //     days.sendKeys(String.valueOf(userData.getDays()));
-//    //    months.sendKeys(userData.getMonth().name());
-//    //    years.sendKeys(String.valueOf(userData.getYears()));
-//       setCheckbox(newsletterCheckbox, userData.isNewsletter());
-//        setCheckbox(specialOffersCheckbox, userData.isGetSpecialOffers());
-//    }
-
- //   private void setCheckbox(WebElement checkbox, boolean desiredCheckedState) {
- //       if (checkbox.isSelected() != desiredCheckedState) {
- //           checkbox.click();
- //       }
-//    }
-
- //   public void clickRegister() {
-  //      registerButton.click();
- //   }
-
- //   public boolean areMandatoryInputsAccessible() {
-  //      boolean isFirstNameInputInteractable = firstNameInput.isDisplayed() && firstNameInput.isEnabled();
-  //      boolean isLastNameInputInteractable = lastNameInput.isDisplayed() && lastNameInput.isEnabled();
-  //      boolean isPasswordInputInteractable = passwordInput.isDisplayed() && passwordInput.isEnabled();
-
-   //     return isFirstNameInputInteractable
-   //             && isLastNameInputInteractable
-    //            && isPasswordInputInteractable;
- //   }
-
- //   public String getEmail() {
- //       return emailInput.getAttribute("value");
-  //  }
-// }
 
