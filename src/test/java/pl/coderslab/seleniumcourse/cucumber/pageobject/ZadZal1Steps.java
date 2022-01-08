@@ -84,12 +84,12 @@ public class ZadZal1Steps {
 
     @And("^New address deleted$")
     public void deleteTheAddress() {
-        zadZal1YourAddressesPage.DeleteNewAddress();
+     //   zadZal1YourAddressesPage.DeleteNewAddress();
     }
 
     @Then("^New address deletion confirmed$")
     public void verifyDeletion() {
-        zadZal1YourAddressesPage.CheckIfAddrDeleted();
+     //   zadZal1YourAddressesPage.CheckIfAddrDeleted();
 
     }
 
