@@ -1,5 +1,6 @@
 package pl.coderslab.seleniumcourse.cucumber.pageobject;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
@@ -27,7 +28,7 @@ public class ZadZal2Test {
 
 
     @Test
-    public void LogInAndChooseProducts() throws IOException {
+    public void PurchasingSweaters() throws IOException {
         driver.get("https://mystore-testlab.coderslab.pl");
         WebElement signInIcon = driver.findElement(By.className("user-info"));
         signInIcon.click();
@@ -37,7 +38,7 @@ public class ZadZal2Test {
         passwordField.sendKeys("tajne");
         WebElement signInBtnIcon = driver.findElement(By.id("submit-login"));
         signInBtnIcon.click();
-        WebElement clothesIcon = driver.findElement(By.xpath("//a[@data-depth='0']"));
+        WebElement clothesIcon = driver.findElement(By.id("category-3"));
         clothesIcon.click();
         WebElement birdSweater = driver.findElement(By.xpath("//img[@alt = 'Brown bear printed sweater']"));
         birdSweater.click();
@@ -65,7 +66,7 @@ public class ZadZal2Test {
         TakesScreenshot screenshot = (TakesScreenshot)driver;
         File tmpScreenshot = screenshot.getScreenshotAs(OutputType.FILE);
         String currentDateTime = LocalDateTime.now().toString().replaceAll(":", "_");
-        Files.copy(tmpScreenshot.toPath(), Paths.get("C:", "test-evidence", "registration-success-evidence-12-"+currentDateTime+".png"));
+        Files.copy(tmpScreenshot.toPath(), Paths.get("C:", "test-evidence", "purchase-success-evidence-"+currentDateTime+".png"));
     }
 
 
@@ -77,8 +78,8 @@ public class ZadZal2Test {
         this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(16));
     }
 
-//   @AfterEach
-    //  public void afterEach() {
-    //      this.driver.quit();
-//  }
+  @AfterEach
+     public void afterEach() {
+         this.driver.quit();
+  }
 }

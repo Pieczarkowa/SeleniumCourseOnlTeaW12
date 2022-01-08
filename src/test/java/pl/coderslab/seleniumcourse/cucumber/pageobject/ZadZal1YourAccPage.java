@@ -13,7 +13,7 @@ public class ZadZal1YourAccPage {
     }
 
     public void GoToAddresses() {
-        WebElement addressesField = driver.findElement(By.xpath("//*[@id=\"footer_account_list\"]/li[4]/a"));
+        WebElement addressesField = driver.findElement(By.id("addresses-link"));
         addressesField.click();
     }
 

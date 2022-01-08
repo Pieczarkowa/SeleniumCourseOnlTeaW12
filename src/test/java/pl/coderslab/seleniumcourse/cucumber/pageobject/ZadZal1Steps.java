@@ -21,7 +21,6 @@ public class ZadZal1Steps {
     private ZadZal1SignInPage zadZal1SignInPage;
     private ZadZal1YourAccPage zadZal1YourAccPage;
     private ZadZal1YourAddressesPage zadZal1YourAddressesPage;
-
     private ZadZal1CreateAddressPage zadZal1CreateAddressPage;
 
 
@@ -84,12 +83,12 @@ public class ZadZal1Steps {
 
     @And("^New address deleted$")
     public void deleteTheAddress() {
-     //   zadZal1YourAddressesPage.DeleteNewAddress();
+        zadZal1YourAddressesPage.DeleteNewAddress();
     }
 
     @Then("^New address deletion confirmed$")
     public void verifyDeletion() {
-     //   zadZal1YourAddressesPage.CheckIfAddrDeleted();
+        zadZal1YourAddressesPage.CheckIfAddrDeleted();
 
     }
 
