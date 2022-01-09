@@ -1,5 +1,6 @@
 package pl.coderslab.seleniumcourse.examples;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -36,7 +37,7 @@ public class SelectCategoriesExample {
         List<WebElement> sizes = driver.findElements(By.xpath("//section/p[text() = 'Size']/..//li"));
         sizes.get(0).click(); // click S
         sizes.get(2).click(); // click L
-    }
+    }//*[@id="group_1"]/option[2]
 
     @BeforeEach
     public void beforeEach() {
@@ -45,8 +46,8 @@ public class SelectCategoriesExample {
         this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(16));
     }
 
-//    @AfterEach
-//    public void afterEach() {
-//        this.driver.quit();
-//    }
+    @AfterEach
+    public void afterEach() {
+        this.driver.quit();
+    }
 }

@@ -18,6 +18,7 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.Month;
+import java.util.List;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -38,12 +39,15 @@ public class ZadZal2Test {
         passwordField.sendKeys("tajne");
         WebElement signInBtnIcon = driver.findElement(By.id("submit-login"));
         signInBtnIcon.click();
-        WebElement clothesIcon = driver.findElement(By.id("category-3"));
+        WebElement clothesIcon = driver.findElement(By.xpath("//*[@id=\"category-3\"]/a"));
         clothesIcon.click();
         WebElement birdSweater = driver.findElement(By.xpath("//img[@alt = 'Brown bear printed sweater']"));
         birdSweater.click();
-        WebElement sizeM = driver.findElement(By.xpath("//*[@id=\"group_1\"]/option[2]"));
-        sizeM.click();
+        List<WebElement> sizes = driver.findElements(By.xpath("//*[@id=\"group_1\"]/option"));
+        //  sizes.get(0).();
+        sizes.get(1).click();
+        //  sizes.get(2).click();
+        //  sizes.get(3).click();
         WebElement quantityBtn = driver.findElement(By.xpath("//*[@name='qty']"));
         quantityBtn.clear();
         quantityBtn.sendKeys("5");
@@ -63,12 +67,15 @@ public class ZadZal2Test {
         agreeTermsOfService.click();
         WebElement orderAndPay = driver.findElement(By.xpath("//button[@class = 'btn btn-primary center-block']"));
         orderAndPay.click();
-        TakesScreenshot screenshot = (TakesScreenshot)driver;
+        TakesScreenshot screenshot = (TakesScreenshot) driver;
         File tmpScreenshot = screenshot.getScreenshotAs(OutputType.FILE);
         String currentDateTime = LocalDateTime.now().toString().replaceAll(":", "_");
-        Files.copy(tmpScreenshot.toPath(), Paths.get("C:", "test-evidence", "purchase-success-evidence-"+currentDateTime+".png"));
+        Files.copy(tmpScreenshot.toPath(), Paths.get("C:", "test-evidence", "purchase-success-evidence-" + currentDateTime + ".png"));
+        WebElement yourAccount = driver.findElement(By.xpath("//*[@id=\"_desktop_user_info\"]/div/a/span"));
+        yourAccount.click();
+        WebElement yourOrders = driver.findElement(By.xpath("//*[@id=\"history-link\"]/span"));
+        yourOrders.click();
     }
-
 
 
     @BeforeEach
@@ -78,8 +85,8 @@ public class ZadZal2Test {
         this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(16));
     }
 
-  @AfterEach
-     public void afterEach() {
-         this.driver.quit();
-  }
+//  @AfterEach
+    //    public void afterEach() {
+    //       this.driver.quit();
+//  }
 }
