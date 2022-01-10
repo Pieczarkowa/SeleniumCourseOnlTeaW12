@@ -77,16 +77,16 @@ public class ZadZal2Test {
         yourOrders.click();
     }
 
-
     @BeforeEach
     public void beforeEach() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         this.driver = new ChromeDriver();
         this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(16));
+        this.driver.manage().window().maximize();
     }
 
-//  @AfterEach
-    //    public void afterEach() {
-    //       this.driver.quit();
-//  }
+    @AfterEach
+    public void afterEach() {
+        this.driver.quit();
+    }
 }

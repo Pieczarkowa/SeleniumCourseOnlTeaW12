@@ -17,7 +17,7 @@ public class ZadZal1YourAddressesPage {
     }
 
     public void CreateNewAddress() {
-        WebElement createNewBtn = driver.findElement(By.xpath("//a[@data-link-action = 'add-address']"));
+        WebElement createNewBtn = driver.findElement(By.xpath("//*[@id=\"content\"]/div/a/span"));
         createNewBtn.click();
 
 

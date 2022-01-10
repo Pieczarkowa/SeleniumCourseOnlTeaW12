@@ -80,6 +80,7 @@ public class FindBy {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         this.driver = new ChromeDriver();
         this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(16));
+
     }
 
 //    @AfterEach
