@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 import java.util.UUID;
 
-public class Zad6 {
+public class Zad5_6 {
     WebDriver driver;
 
     @Test
@@ -20,7 +20,7 @@ public class Zad6 {
         signInBtn.click();
         WebElement createAccBtn = driver.findElement(By.className("no-account"));
         createAccBtn.click();
-        WebElement socialTitle = driver.findElement(By.xpath("//input")); // to jest pewnie źle
+        WebElement socialTitle = driver.findElement(By.xpath("//input"));
         WebElement firstName = driver.findElement(By.xpath("//input[@name='firstname']"));
         WebElement lastName = driver.findElement(By.xpath("//input[@name='lastname']"));
         WebElement emailAddr = driver.findElement(By.xpath("//input[@name='email']"));
