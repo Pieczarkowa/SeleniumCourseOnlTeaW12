@@ -44,10 +44,10 @@ public class ZadZal2Test {
         WebElement birdSweater = driver.findElement(By.xpath("//img[@alt = 'Brown bear printed sweater']"));
         birdSweater.click();
         List<WebElement> sizes = driver.findElements(By.xpath("//*[@id=\"group_1\"]/option"));
-        //  sizes.get(0).();
+        sizes.get(0).click();
         sizes.get(1).click();
-        //  sizes.get(2).click();
-        //  sizes.get(3).click();
+        sizes.get(2).click();
+        sizes.get(3).click();
         WebElement quantityBtn = driver.findElement(By.xpath("//*[@name='qty']"));
         quantityBtn.clear();
         quantityBtn.sendKeys("5");

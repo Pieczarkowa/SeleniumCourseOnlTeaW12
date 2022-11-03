@@ -9,6 +9,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
+        /*Nawigacja
+        Na stronie https://mystore-testlab.coderslab.pl/index.php wykonaj następującą sekwencję kroków:
+
+        Wejdź na stronę główną.
+        Przejdź do opcji 'Sign in'
+        Wybierz opcję 'No account? Create one here'
+        Za pomocą metod nawigacyjnych przejdź do strony głównej. */
+
+
+
+
+
 public class Zad1 {
     WebDriver driver;
 
