@@ -12,19 +12,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 import java.util.UUID;
 
-// Wyszukaj elementy za pomocą lokalizatora by.id
-//Na stronie https://hotel-testlab.coderslab.pl/en/ zidentyfikuj następująca pola/przyciski za pomocą lokalizatora by.id:
-//
-//
-//(pole tekstowe) Hotel Location
-//(przycisk) Search Now
-//(pole tekstowe) Enter your e-mail (pole na dole stron)
-//Po zidentyfikowaniu elementów wpisz następujące wartości w pola tekstowe:
-//
-//Hotel Location - Warsaw
-//Enter your e-mail - test@test.com
+/* Wyszukaj elementy za pomocą lok. by.id
+Na stronie https://hotel-testlab.coderslab.pl/en/ zidentyfikuj następująca pola:
 
-// zad 1 - By.id
+(pole tekstowe) Hotel Location
+(przycisk) Search Now
+(pole tekstowe) Enter your e-mail
+Po zidentyfikowaniu elementów wpisz następujące wartości w pola:
+
+Hotel Location - Warsaw
+Enter your e-mail - test@test.com
+
+ zad 1 - By.id */
 
 public class FindBy {
     WebDriver driver;
@@ -38,7 +37,7 @@ public class FindBy {
         hotelLocationInput.sendKeys("Warsaw");
         enterEmailInput.sendKeys("test@test.com");
 
-     //zad 2. find By.name
+     //zad 2. find By.name, j.w + przycisk subscribe. Dodatkowo kliknij przycisk Serach Now, używając metody Submit
     }
 
     @Test
@@ -50,10 +49,16 @@ public class FindBy {
         WebElement subscribeBtn = driver.findElement(By.name("submitNewsletter"));
         hotelLocationInput.sendKeys("Warsaw");
         enterYourEmailInput.sendKeys("test@test.com");
-        driver.findElement(By.name("search_room_submit")).submit(); // czy to działa i jesli tak to czy to to samo co searchNowBtn.submit();?
+        driver.findElement(By.name("search_room_submit")).submit();
 
     }
-// zad 3 By.className
+/* Zad 3. Na stronie https://hotel-testlab.coderslab.pl//en/ znajdz pola za pomocą lokalizatora By.className:
+(przycisk) Sign In
+(pole tekstowe) Email address
+Następnie kliknij przycisk Sign In i wpisz dowolny adres e-mail w pole Email address.
+Rozpocznij tworzenie nowego użytkownika za pomocą kliknięcia przycisku Create an account
+(nie musi być z wykorzystaniem lokalizatora By.className)*/
+
     @Test
     public void shouldFindByClassName() {
         driver.get("https://hotel-testlab.coderslab.pl/en/");
@@ -71,7 +76,7 @@ public class FindBy {
         if(!firstNameInput.isDisplayed() || !firstNameInput.isEnabled()) {
             Assertions.fail("element not interactable!");
         }
-        firstNameInput.sendKeys("ala");
+        firstNameInput.sendKeys("Alek");
     }
 
 
@@ -83,8 +88,8 @@ public class FindBy {
 
     }
 
-//    @AfterEach
-//    public void afterEach() {
-//        this.driver.quit();
-//    }
+    @AfterEach
+    public void afterEach() {
+      this.driver.quit();
+   }
 }
