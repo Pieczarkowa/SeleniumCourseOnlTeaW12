@@ -24,6 +24,16 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/*Napisz skrypt, który:
+
+zaloguje się na tego samego użytkownika z zadania 1,
+wybierze do zakupu Hummingbird Printed Sweater
+wybierze rozmiar M, wybierze 5 sztuk według parametru podanego w teście, dodaj produkt do koszyka,
+przejdzie do opcji - checkout,potwierdzi address (możesz go dodać wcześniej ręcznie),
+wybierze metodę odbioru - PrestaShop "pick up in store",wybierze opcję płatności - Pay by Check,
+kliknie na "order with an obligation to pay",zrobi screenshot z potwierdzeniem zamówienia i kwotą.*/
+
+
 public class ZadZal2Test {
     WebDriver driver;
 
@@ -44,10 +54,7 @@ public class ZadZal2Test {
         WebElement birdSweater = driver.findElement(By.xpath("//img[@alt = 'Brown bear printed sweater']"));
         birdSweater.click();
         List<WebElement> sizes = driver.findElements(By.xpath("//*[@id=\"group_1\"]/option"));
-        sizes.get(0).click();
         sizes.get(1).click();
-        sizes.get(2).click();
-        sizes.get(3).click();
         WebElement quantityBtn = driver.findElement(By.xpath("//*[@name='qty']"));
         quantityBtn.clear();
         quantityBtn.sendKeys("5");
