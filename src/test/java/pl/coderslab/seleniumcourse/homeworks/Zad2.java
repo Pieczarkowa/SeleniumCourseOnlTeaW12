@@ -11,6 +11,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import java.sql.Driver;
 import java.time.Duration;
 
+//Pobranie innego sterownika i uruchomienie poprzedniego testu (Zad1) na innej przegladarce.
+
 public class Zad2 {
     WebDriver driver;
 
