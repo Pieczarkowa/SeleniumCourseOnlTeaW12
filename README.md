@@ -1,2 +1,2 @@
 # SeleniumCourseOnlTeaW12
-Testujemy! :D
+My first training repository
