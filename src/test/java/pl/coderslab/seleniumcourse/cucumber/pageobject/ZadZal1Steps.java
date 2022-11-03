@@ -16,6 +16,17 @@ import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/*Utwórz użytkownika manualnie na stronie https://mystore-testlab.coderslab.pl.
+Możesz wykorzystać tymczasowego maila do utworzenia użytkownika: https://10minutemail.com/.
+
+Napisz skrypt, który:
+-będzie logować się na tego stworzonego użytkownika,
+-wejdzie klikając w kafelek Addresses po zalogowaniu (adres, na którym powinniśmy się znaleźć to: https://mystore-testlab.coderslab.pl/index.php?controller=addresses ),
+-kliknie w + Create new address,
+-wypełni formularz New address - dane powinny być pobierane z tabeli Examples w Gherkinie (alias, address, city, zip/postal code, country, phone),
+-sprawdzi czy dane w dodanym adresie są poprawne. */
+
+
 public class ZadZal1Steps {
     private WebDriver driver;
     private ZadZal1SignInPage zadZal1SignInPage;
