@@ -9,6 +9,17 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 import java.time.Duration;
 
+/*Ćwiczenie z wyszukiwania xPath. Na portalu sklepu https://mystore-testlab.coderslab.pl/index.php?controller=authentication&create_account=1
+ wyszukaj następujące elementy:
+
+        social title
+        First name
+        Last name
+        Email
+        Password
+        Show
+        Birthdate */
+
 public class Zad4 {
 
     WebDriver driver;
