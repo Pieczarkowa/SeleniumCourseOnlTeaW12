@@ -9,6 +9,23 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 import java.time.Duration;
 
+/*      Wyszukiwanie elementów - formularz
+        Pod linkiem https://katalon-test.s3.amazonaws.com/demo-aut/dist/html/form.html dostępny jest formularz,
+        którego wypełnianie i wysyłanie należy zautomatyzować.Wypełnij dane w formularzu:
+
+        First name: Karol
+        Last name: Kowalski
+        Gender: Male
+        Date of birth: 05/22/2010
+        Address: Prosta 51
+        Email: karol.kowalski@mailinator.com
+        Password: Pass123
+        Company: Coders Lab
+        Comment: To jest mój pierwszy automat testowy
+        Zatwierdź formularz - SUBMIT */
+
+
+
 public class Zad3 {
 
     WebDriver driver;
